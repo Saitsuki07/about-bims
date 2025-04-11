@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIMS - Business Inventory Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">BIMS</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#" id="open-chatbot">Chatbot</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <h1>Welcome to BIMS</h1>
+      <p>Your smart Business Inventory Management System</p>
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <h2>About BIMS</h2>
+    <p>
+      BIMS simplifies inventory tracking and business operations. Built for modern companies, it helps manage stock, monitor suppliers, and generate live reports with ease.
+    </p>
+  </section>
+
+  <section id="features" class="features">
+    <h2>Key Features</h2>
+    <ul>
+      <li>📦 Real-Time Inventory Monitoring</li>
+      <li>📊 Detailed Analytics Dashboard</li>
+      <li>🤝 Supplier Relationship Manager</li>
+      <li>🔐 Role-Based User Access</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BIMS Project Group</p>
+    <p>Developed by:</p>
+    <ul style="list-style: none; padding-left: 0; font-size: 0.9rem;">
+      <li>Zymon Diestro</li>
+      <li>Marben Nonoy</li>
+      <li>Analyn Rebamonte</li>
+      <li>Benjelyn Bobila</li>
+      <li>John Paul Medrano</li>
+    </ul>
+  </footer>
+
+  <!-- ✅ Chatbot Script: Minimal Identity + Bubble toggle support -->
+  <script type="module">
+    import Chatbox from 'https://cdn.jsdelivr.net/npm/@chaindesk/embeds@latest/dist/chatbox/index.js';
+
+    let widget;
+
+    (async () => {
+      widget = await Chatbox.initBubble({
+        agentId: 'cm4d6pnv000p9ppjjlnwqtuw2',
+        initialMessages: [
+          'Hi! 👋 I’m BIMS Assistant. May I know your name before we begin?',
+        ]
+      });
+    })();
+
+    // Add toggle open on navbar click
+    document.addEventListener('DOMContentLoaded', () => {
+      const openBtn = document.getElementById('open-chatbot');
+      openBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (widget) widget.toggle();
+      });
+    });
+  </script>
+</body>
+</html>
